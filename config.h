@@ -65,12 +65,22 @@ static const char* slockcmd[] = { "slock", NULL };
 static const char* brightness_up[] = { "brightness.sh", "+10", NULL };
 static const char* brightness_down[] = { "brightness.sh", "-10", NULL };
 
+static const char* zencmd[] = { "zen", NULL };
+
+static const char *volup_cmd[]   = { "amixer", "sset", "Master", "5%+", NULL };
+static const char *voldown_cmd[] = { "amixer", "sset", "Master", "5%-", NULL };
+static const char *volmute_cmd[] = { "amixer", "sset", "Master", "toggle", NULL };
+
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    { 0,                       XF86XK_MonBrightnessUp,     spawn, {.v = brightness_up } },
-    { 0,                       XF86XK_MonBrightnessDown,   spawn, {.v = brightness_down } },
+    { 0,               XF86XK_MonBrightnessUp, spawn,          {.v = brightness_up } },
+    { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = brightness_down } },
+    { 0,             XF86XK_AudioRaiseVolume,  spawn,          {.v = volup_cmd} },
+    { 0,             XF86XK_AudioLowerVolume,  spawn,          {.v = voldown_cmd} },
+    { 0,             XF86XK_AudioMute,         spawn,          {.v = volmute_cmd} },
+    { MODKEY,                       XK_l,      spawn,          {.v = zencmd } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
