@@ -62,8 +62,8 @@ static const char* dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char* termcmd[]  = { "kitty", NULL };
 static const char* slockcmd[] = { "slock", NULL };
 
-static const char* brightness_up[] = { "brightness.sh", "+5", NULL };
-static const char* brightness_down[] = { "brightness.sh", "-5", NULL };
+static const char* brightness_up[] = { "doas", "/usr/bin/brightness.sh", "+5", NULL };
+static const char* brightness_down[] = { "doas", "/usr/bin/brightness.sh", "-5", NULL };
 
 static const char* zencmd[] = { "zen", NULL };
 
