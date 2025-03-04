@@ -80,7 +80,7 @@ static const Key keys[] = {
     { 0,             XF86XK_AudioRaiseVolume,  spawn,          {.v = volup_cmd} },
     { 0,             XF86XK_AudioLowerVolume,  spawn,          {.v = voldown_cmd} },
     { 0,             XF86XK_AudioMute,         spawn,          {.v = volmute_cmd} },
-    { MODKEY,                       XK_l,      spawn,          {.v = zencmd } },
+    { MODKEY,                       XK_z,      spawn,          {.v = zencmd } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
